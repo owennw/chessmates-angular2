@@ -1,0 +1,56 @@
+:root
+  --selected-background-color: #CFD8DC
+  --selected-color: white
+  --player-list-background-color: #EEE
+  --player-list-selected-color: white
+  --player-list-selected-background-color: #BBD8DC
+  --player-list-hover-color: #607D8B
+  --player-list-hover-background-color: #DDD
+  --badge-background-color: #607D8B
+
+.selected
+  color: var(--selected-color)
+  background-color: var(--selected-background-color) !important
+
+.players
+  margin: 0 0 2em 0
+  list-style-type: none
+  padding: 0
+  width: 15em
+
+  & li
+    cursor: pointer
+    position: relative
+    left: 0
+    background-color: var(--player-list-background-color)
+    margin: .5em
+    padding: .3em 0
+    height: 1.6em
+    border-radius: 4px
+
+    &.selected:hover
+      color: var(--player-list-selected-color)
+      background-color: var(--player-list-selected-background-color) !important
+
+    &:hover
+      color: var(--player-list-hover-color)
+      background-color: var(--player-list-hover-background-color)
+      left: .1em
+
+  & text
+    position: relative
+    top: -3px
+
+  & badge
+    display: inline-block
+    font-size: small
+    color: white
+    padding: 0.8em 0.7em 0 0.7em
+    background-color: var(--badge-background-color)
+    line-height: 1em
+    position: relative
+    left: -1px
+    top: -4px
+    height: 1.8em
+    margin-right: .8em
+    border-radius: 4px 0 0 4px

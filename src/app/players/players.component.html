@@ -1,0 +1,17 @@
+<h2>Scott Logic lichess Players</h2>
+<ul class="players">
+  <li
+    *ngFor="let player of players"
+    [class.selected]="player === selectedPlayer"
+    (click)="onSelect(player)"
+  >
+    <span class="badge">{{player.id}}</span>
+    <span>{{player.username}}</span>
+  </li>
+</ul>
+<div *ngIf="selectedPlayer">
+  <h2>
+    {{selectedPlayer.username | uppercase}} is selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

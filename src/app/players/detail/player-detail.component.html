@@ -1,0 +1,6 @@
+<div *ngIf="player">
+  <h2>{{player.username}} details!</h2>
+  <div><label>id: </label>{{player.id}}</div>
+  <div><label>username: </label>{{player.username}}</div>
+</div>
+<button (click)="goBack()">Back</button>
