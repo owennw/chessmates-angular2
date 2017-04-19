@@ -3,6 +3,16 @@ import { MockBackend, MockConnection } from '@angular/http/testing'
 
 import environment from '../environments/environment'
 import players from './stub-players'
+import games from './stub-games'
+
+const setupMockGet = (connection: MockConnection) => (url: String, stubs: Array<Object>) => {
+  if (connection.request.method === RequestMethod.Get && connection.request.url.match(`/${url}$`)) {
+    connection.mockRespond(new Response(new ResponseOptions({ body: stubs.slice() })))
+    return
+  }
+
+  return
+}
 
 /**
  * Provider to allow the use of a stub backend instead of a real Http service for backend-less development.
@@ -13,24 +23,21 @@ const StubBackendProvider = {
   useFactory: (mockBackend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) => {
 
     if (!environment.stubBackend) {
-      console.log('Configuring real Http backend...')
       return new Http(realBackend, options)
     }
 
-    console.log('Configuring stub Http backend...')
 
     mockBackend.connections.subscribe((connection: MockConnection) => {
+      const mockGet = setupMockGet(connection)
 
-      // wrap in timeout to simulate server api call
+      // Wrap in timeout to simulate server api call
       setTimeout(() => {
+        mockGet('players', players)
+        mockGet('player/[A-Za-z]*', players.filter(p => p.id === connection.request.url.split('/').pop()))
 
-        // Get all tasks
-        if (connection.request.method === RequestMethod.Get && connection.request.url.match('/players$')) {
-          connection.mockRespond(new Response(new ResponseOptions({body: players.slice()})))
-          return
-        }
+        mockGet('games', games)
+        mockGet('game/[A-Za-z]*', games.filter(g => g.id === connection.request.url.split('/').pop()))
       }, 500)
-
     })
 
     return new Http(mockBackend, options)

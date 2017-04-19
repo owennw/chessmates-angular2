@@ -1,6 +1,5 @@
 const environment = {
-  production: false,
-  stubBackend: false,
+  stubBackend: true,
 }
 
 export default environment

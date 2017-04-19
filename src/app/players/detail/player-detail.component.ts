@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
 import { Location } from '@angular/common'
 
@@ -13,14 +13,13 @@ import Player from '../player'
 })
 
 export default class PlayerDetailComponent implements OnInit {
-  @Input() player: Player
+  player: Player
 
   constructor(
     private playerService: PlayersService,
     private route: ActivatedRoute,
     private location: Location
   ) {
-
   }
 
   ngOnInit(): void {

@@ -34,6 +34,6 @@ export default class Players implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPlayer.id])
+    this.router.navigate(['/player', this.selectedPlayer.id])
   }
 }
