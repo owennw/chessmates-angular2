@@ -12,6 +12,8 @@ import { App } from './app.component'
 
 import Heading from './heading.component'
 
+import Dashboard from './dashboard/dashboard.component'
+
 import Players from './players/players.component'
 import PlayerDetail from './players/detail/player-detail.component'
 import PlayersService from './players/players.service'
@@ -30,6 +32,7 @@ import GamesService from './games/games.service'
   declarations: [
     App,
     Heading,
+    Dashboard,
     Players,
     PlayerDetail,
     Games,

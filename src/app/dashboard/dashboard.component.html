@@ -1,0 +1,8 @@
+<h3>Recent Games</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let game of games" [routerLink]="['/game', game.id]" class="col-1-4">
+    <div class="module game">
+      <h4>{{game.name}}</h4>
+    </div>
+  </a>
+</div>

@@ -16,14 +16,13 @@ export default class GamesService {
     return this.http
       .get(this.gamesUrl)
       .toPromise()
-      .then(response => response.json() as Game[])
+      .then(response => response.json().map((r: any) => new Game(r.id, r.players)))
       .catch(this.handleError)
   }
 
   getGame(id: string): Promise<Game> {
     return this.getGames()
       .then(games => games.find((g: Game) => g.id === id))
-      .then(g => { console.log(g); return g })
   }
 
   private handleError(error: any): Promise<any> {
