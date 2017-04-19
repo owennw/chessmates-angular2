@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
 import { Location } from '@angular/common'
 
-import PlayersService from '../players.service'
-
-import Player from '../player'
+import LichessService from '../../lichess/lichess.service'
+import LichessUser from '../../lichess/lichess-user'
 
 @Component({
   selector: 'player',
@@ -13,10 +12,10 @@ import Player from '../player'
 })
 
 export default class PlayerDetailComponent implements OnInit {
-  player: Player
+  player: LichessUser
 
   constructor(
-    private playerService: PlayersService,
+    private playerService: LichessService,
     private route: ActivatedRoute,
     private location: Location
   ) {
@@ -24,7 +23,7 @@ export default class PlayerDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.playerService.getPlayer(params['id']))
+      .switchMap((params: Params) => this.playerService.getUser(params['id']))
       .subscribe(player => this.player = player)
   }
 

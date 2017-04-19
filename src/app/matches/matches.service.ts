@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
 
-import Game from './game'
+import Match from './match'
 
 import { baseUrl } from '../config'
 
 @Injectable()
-export default class GamesService {
-  private gamesUrl = `${baseUrl}/games`
+export default class MatchesService {
+  private matchesUrl = `${baseUrl}/games`
 
   constructor(private http: Http) {
   }
 
-  getGames(): Promise<Game[]> {
+  getMatches(): Promise<Match[]> {
     return this.http
-      .get(this.gamesUrl)
+      .get(this.matchesUrl)
       .toPromise()
-      .then(response => response.json().map((r: any) => new Game(r.id, r.players)))
+      .then(response => response.json().map((r: any) => new Match(r)))
       .catch(this.handleError)
   }
 
-  getGame(id: string): Promise<Game> {
-    return this.getGames()
-      .then(games => games.find((g: Game) => g.id === id))
+  getMatch(id: string): Promise<Match> {
+    return this.getMatches()
+      .then(matches => matches.find((m: Match) => m.id === id))
   }
 
   private handleError(error: any): Promise<any> {

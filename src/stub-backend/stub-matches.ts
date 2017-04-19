@@ -1,4 +1,4 @@
-const games = [
+const matches = [
   {'id': 'jYaSxQp3', 'players': {'BLACK': 'tf235', 'WHITE': 'jfaker' }},
   {'id': 'M6RaYHBj', 'players': {'BLACK': 'riciardos', 'WHITE': 'samei07' }},
   {'id': 'lArcNA9L', 'players': {'BLACK': 'samei07', 'WHITE': 'riciardos' }},
@@ -47,4 +47,4 @@ const games = [
   {'id': 'encM6le1', 'players': {'BLACK': 'sydeman', 'WHITE': 'jedrus07' }},
 ]
 
-export default games
+export default matches

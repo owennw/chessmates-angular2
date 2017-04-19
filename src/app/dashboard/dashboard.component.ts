@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
-import Game from '../games/game'
-import GamesService from '../games/games.service'
+import Match from '../matches/match'
+import MatchesService from '../matches/matches.service'
 
 @Component({
   selector: 'dashboard',
@@ -10,13 +10,13 @@ import GamesService from '../games/games.service'
 })
 
 export default class Dashboard implements OnInit {
-  games: Game[] = []
+  matches: Match[] = []
 
-  constructor(private gameService: GamesService) {
+  constructor(private matchService: MatchesService) {
   }
 
   ngOnInit(): void {
-    this.gameService.getGames()
-      .then(games => this.games = games.slice(1, 5))
+    this.matchService.getMatches()
+      .then(matches => this.matches = matches.slice(0, 9))
   }
 }

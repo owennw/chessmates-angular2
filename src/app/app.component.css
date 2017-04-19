@@ -1,3 +1,7 @@
+:root
+  --accent-hover-color: #2bb3bb
+  --accent-color: rgba(43,179,187,0.5)
+
 h1
   font-size: 1.2em
   color: #999
@@ -9,20 +13,37 @@ h2
   padding-top: 0
 
 nav
+  & ul
+    list-style: none
+    margin: 0
+    padding: 0
+    overflow: hidden
+
+  & li
+    float: left
+    width: 100px
+
+    &::before
+      content: '/'
+      color: #ddd
+      cursor: default
+      display: inline-block
+
   & a
     padding: 5px 10px
     text-decoration: none
     margin-top: 10px
+    margin-right: 10px
     display: inline-block
-    background-color: #eee
-    border-radius: 4px
+    color: var(--accent-color)
+    text-transform: uppercase
 
     &:visited, &:link
       color: #607D8B
 
     &:hover
-      color: #039be5
-      background-color: #CFD8DC
+      color: var(--accent-hover-color)
 
     &.active
       color: #039be5
+ 

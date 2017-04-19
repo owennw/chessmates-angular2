@@ -2,5 +2,9 @@
   <h2>{{player.username}} details!</h2>
   <div><label>id: </label>{{player.id}}</div>
   <div><label>username: </label>{{player.username}}</div>
+  <div><label>online: </label>{{player.online}}</div>
+  <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
+  <div><label>classical ranking: </label>{{player.classical.rating}}</div>
+  <div><label>bullet ranking: </label>{{player.bullet.rating}}</div>
 </div>
 <button (click)="goBack()">Back</button>

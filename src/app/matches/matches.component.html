@@ -1,0 +1,15 @@
+<h2>Scott Logic lichess Matches</h2>
+<ul class="matches">
+  <li
+    *ngFor="let match of matches"
+    (click)="onSelect(match)"
+  >
+    <span class="badge">{{match.name}}</span>
+  </li>
+</ul>
+<div *ngIf="selectedMatch">
+  <h2>
+    {{selectedMatch.name}} is selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

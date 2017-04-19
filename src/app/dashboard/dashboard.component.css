@@ -1,60 +1,42 @@
-[class*='col-']
-  float: left
-  padding-right: 20px
-  padding-bottom: 20px
-
-[class*='col-']:last-of-type
-  padding-right: 0
-
+:root
+  --primary-dark: #231f20
+  --primary-light: white
 a
   text-decoration: none
 
-*, *:after, *:before 
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
-
 h3 
   text-align: center
-  margin-bottom: 0
+  margin-bottom: 15px
 
 h4 
   position: relative
 
-.grid 
-  margin: 0
+.game-preview
+  display: inline-block
+  margin-right: 130px
+  margin-bottom: 15px
 
-.col-1-4 
-  width: 25%
+  &:nth-child(3n)
+    margin-right: 0
+
+.game-preview, .module
+  width: 525px
 
 .module 
   padding: 20px
   text-align: center
-  color: #eee
   max-height: 120px
   min-width: 120px
-  background-color: #607D8B
+  color: var(--primary-light)
+  background-color: var(--primary-dark)
   border-radius: 2px
 
 .module:hover 
-  background-color: #EEE
+  color: var(--primary-dark)
+  background-color: var(--primary-light)
   cursor: pointer
-  color: #607d8b
 
-.grid-pad 
-  padding: 10px 0
-
-.grid-pad > [class*='col-']:last-of-type 
-  padding-right: 20px
-
-@media (max-width: 600px) 
-  .module 
-    font-size: 10px
-    max-height: 75px 
-
-@media (max-width: 1024px) 
-  .grid 
-    margin: 0
-  
-  .module 
-    min-width: 60px
+.lichess
+  width: 525px
+  height: 352px
+  frameborder: 0

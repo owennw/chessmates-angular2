@@ -18,9 +18,13 @@ import Players from './players/players.component'
 import PlayerDetail from './players/detail/player-detail.component'
 import PlayersService from './players/players.service'
 
-import Games from './games/games.component'
-import GameDetail from './games/detail/game-detail.component'
-import GamesService from './games/games.service'
+import Matches from './matches/matches.component'
+import MatchDetail from './matches/detail/match-detail.component'
+import MatchesService from './matches/matches.service'
+
+import LichessService from './lichess/lichess.service'
+
+import SafePipe from './safepipe'
 
 @NgModule({
   imports: [
@@ -31,19 +35,21 @@ import GamesService from './games/games.service'
   ],
   declarations: [
     App,
+    SafePipe,
     Heading,
     Dashboard,
     Players,
     PlayerDetail,
-    Games,
-    GameDetail,
+    Matches,
+    MatchDetail,
   ],
   providers: [
     StubBackendProvider,
     MockBackend,
     BaseRequestOptions,
     PlayersService,
-    GamesService,
+    MatchesService,
+    LichessService,
   ],
   bootstrap: [
     App,

@@ -54,3 +54,12 @@
     height: 1.8em
     margin-right: .8em
     border-radius: 4px 0 0 4px
+
+.player
+  float: right
+
+  & label 
+    display: inline-block
+    margin: .5em 0
+    color: #607D8B
+    font-weight: bold
