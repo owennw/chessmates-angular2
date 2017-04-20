@@ -45,4 +45,8 @@ nav
 
       &.active
         color: #039be5
+
+footer
+  font-style: italic
+  float: right
  

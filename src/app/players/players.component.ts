@@ -26,7 +26,6 @@ export default class Players implements OnInit {
   getPlayers(): void {
     this.playersService.getPlayers()
       .then(players => this.players = players)
-      .then(() => console.log(this.players))
   }
 
   onSelect(player: Player): void {

@@ -1,3 +1,5 @@
+/* tslint:disable trailing-comma */
+
 const matches = [
   {
     'id': 'tZtLeWY1',
