@@ -1,4 +1,2 @@
-<div *ngIf="match">
-  <h2>{{match.name}}</h2>
-  <button (click)="goBack()">Back</button>
-</div>
+<heading [text]="match.name"></heading>
+<button (click)="goBack()">Back</button>

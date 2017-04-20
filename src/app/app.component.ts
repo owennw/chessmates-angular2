@@ -1,9 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, ViewEncapsulation } from '@angular/core'
 
 @Component({
   selector: 'lichess-app',
   template: `
-    <heading [text]="title"></heading>
+    <header>Chessmates</header>
     <nav>
       <ul>
         <li><a routerLink="/dashboard">Home</a></li>
@@ -13,9 +13,10 @@ import { Component } from '@angular/core'
     </nav>
     <router-outlet></router-outlet>
   `,
-  styleUrls: [ './app.component.css' ],
+  styleUrls: [ './styles/styles.css', './app.component.css' ],
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class App {
-  title = 'Chessmates'
+  title = 'Recent Matches'
 }

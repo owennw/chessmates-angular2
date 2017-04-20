@@ -1,7 +1,5 @@
-<div *ngIf="player">
-  <h2>{{player.username}} details!</h2>
-  <div><label>id: </label>{{player.id}}</div>
-  <div><label>username: </label>{{player.username}}</div>
+<heading text="{{player.username}} details"></heading>
+<div>
   <div><label>online: </label>{{player.online}}</div>
   <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
   <div><label>classical ranking: </label>{{player.classical.rating}}</div>

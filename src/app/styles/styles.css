@@ -1,0 +1,10 @@
+@import './variables'
+
+body
+  margin-left: var(--gutter-left)
+
+*
+  font-family: var(--default-font-family)
+
+*, *:after, *:before
+  box-sizing: border-box

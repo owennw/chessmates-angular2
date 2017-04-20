@@ -1,7 +1,8 @@
-:root
-  --heading-1-color: #231f20
+@import './styles/variables'
 
 h1
-  color: var(--heading-1-color)
-  font-family: Arial, Helvetica, sans-serif
-  font-size: 250%
+  color: var(--heading-large-color)
+  font-family: var(--heading-font-family)
+  font-size: 200%
+  margin-top: 30px
+  margin-bottom: 40px

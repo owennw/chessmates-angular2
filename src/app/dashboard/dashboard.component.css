@@ -1,6 +1,8 @@
+@import '../styles/variables'
+
 :root
-  --primary-dark: #231f20
-  --primary-light: white
+  --preview-width: 525px
+
 a
   text-decoration: none
 
@@ -13,30 +15,25 @@ h4
 
 .game-preview
   display: inline-block
-  margin-right: 130px
-  margin-bottom: 15px
+  margin-right: 115px
+  margin-bottom: 30px
+  width: var(--preview-width)
 
   &:nth-child(3n)
     margin-right: 0
 
-.game-preview, .module
-  width: 525px
-
 .module 
-  padding: 20px
+  padding: 5px
   text-align: center
-  max-height: 120px
-  min-width: 120px
-  color: var(--primary-light)
-  background-color: var(--primary-dark)
+  color: var(--primary-light-color)
+  background-color: var(--primary-dark-color)
   border-radius: 2px
 
 .module:hover 
-  color: var(--primary-dark)
-  background-color: var(--primary-light)
+  color: var(--accent-hover-color)
   cursor: pointer
 
 .lichess
-  width: 525px
+  width: var(--preview-width)
   height: 352px
-  frameborder: 0
+  border: none

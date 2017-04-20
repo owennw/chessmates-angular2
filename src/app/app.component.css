@@ -1,49 +1,54 @@
+@import './styles/variables'
+
 :root
-  --accent-hover-color: #2bb3bb
-  --accent-color: rgba(43,179,187,0.5)
+  --header-font-size: 20px
 
-h1
-  font-size: 1.2em
-  color: #999
-  margin-bottom: 0
-
-h2
-  font-size: 2em
-  margin-top: 0
-  padding-top: 0
+header
+  background-color: var(--primary-dark-color)
+  color: var(--primary-light-color)
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: var(--header-height)
+  padding-left: var(--gutter-left)
+  padding-top: calc((var(--header-height) - var(--header-font-size)) / 2)
+  font-size: var(--header-font-size)
 
 nav
-  & ul
+  margin-top: calc(var(--header-height) + 10px)
+
+  & > ul
     list-style: none
     margin: 0
     padding: 0
     overflow: hidden
 
-  & li
-    float: left
-    width: 100px
+    & > li
+      float: left
 
-    &::before
-      content: '/'
-      color: #ddd
-      cursor: default
-      display: inline-block
+      &::before
+        content: '/'
+        color: #ddd
+        cursor: default
+        display: inline-block
 
-  & a
-    padding: 5px 10px
-    text-decoration: none
-    margin-top: 10px
-    margin-right: 10px
-    display: inline-block
-    color: var(--accent-color)
-    text-transform: uppercase
+      & > a
+        padding: 5px 10px
+        text-decoration: none
+        margin-top: 10px
+        margin-right: 10px
+        display: inline-block
+        color: var(--accent-color)
+        text-transform: uppercase
 
-    &:visited, &:link
-      color: #607D8B
+        &:visited, &:link
+          color: #607D8B
 
-    &:hover
-      color: var(--accent-hover-color)
+        &:hover
+          color: var(--accent-hover-color)
 
-    &.active
-      color: #039be5
+        &.active
+          color: #039be5
  

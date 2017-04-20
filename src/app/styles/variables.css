@@ -1,0 +1,13 @@
+:root
+  --heading-large-color: #231f20
+  --heading-medium-color: #444
+  --body-text-color: #888
+  --default-font-family: Arial, Helvetica, sans-serif
+  --heading-font-family: var(--default-font-family)
+  --body-font-family: Cambria, Georgia
+  --accent-hover-color: #2bb3bb
+  --accent-color: rgba(43,179,187,0.5)
+  --primary-light-color: white
+  --primary-dark-color: #231f20
+  --header-height: 50px
+  --gutter-left: 50px
