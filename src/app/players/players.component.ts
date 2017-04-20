@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 
 import PlayersService from './players.service'
-
-import LichessUser from '../lichess/lichess-user'
-import LichessService from '../lichess/lichess.service'
+import Player from './player'
 
 @Component({
   selector: 'players',
@@ -13,11 +11,10 @@ import LichessService from '../lichess/lichess.service'
 })
 
 export default class Players implements OnInit {
-  players: LichessUser[] = []
+  players: Player[] = []
 
   constructor(
-    private playerService: PlayersService,
-    private lichessService: LichessService,
+    private playersService: PlayersService,
     private router: Router
   ) {
   }
@@ -27,13 +24,12 @@ export default class Players implements OnInit {
   }
 
   getPlayers(): void {
-    this.playerService.getPlayers()
-      .then(players => players.forEach(p =>
-        this.lichessService.getUser(p.id).then(u => this.players.push(u)))
-      )
+    this.playersService.getPlayers()
+      .then(players => this.players = players)
+      .then(() => console.log(this.players))
   }
 
-  onSelect(player: LichessUser): void {
+  onSelect(player: Player): void {
     this.router.navigate(['/player', player.id])
   }
 }

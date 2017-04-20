@@ -18,5 +18,4 @@ import { Component, ViewEncapsulation } from '@angular/core'
 })
 
 export class App {
-  title = 'Recent Matches'
 }

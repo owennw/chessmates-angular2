@@ -3,6 +3,9 @@
 :root
   --preview-width: 525px
 
+select
+  width: 60px
+
 a
   text-decoration: none
 

@@ -1,15 +1,21 @@
-<heading text="Scott Logic lichess matches"></heading>
-<ul class="matches">
-  <li
-    *ngFor="let match of matches"
-    (click)="onSelect(match)"
-  >
-    <span class="badge">{{match.name}}</span>
-  </li>
-</ul>
-<div *ngIf="selectedMatch">
-  <h2>
-    {{selectedMatch.name}} is selected
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
+<page>
+  <page-header>
+    <page-title>Scott Logic lichess matches</page-title>
+  </page-header>
+  <page-body>
+    <ul class="matches">
+      <li
+        *ngFor="let match of matches"
+        (click)="onSelect(match)"
+      >
+        <span class="badge">{{match.name}}</span>
+      </li>
+    </ul>
+    <div *ngIf="selectedMatch">
+      <h2>
+        {{selectedMatch.name}} is selected
+      </h2>
+      <button (click)="gotoDetail()">View Details</button>
+    </div>
+  </page-body>
+</page>

@@ -1,10 +1,18 @@
-<div *ngIf="player">
-  <heading text="{{player.username}} details"></heading>
-  <div>
-    <div><label>online: </label>{{player.online}}</div>
-    <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
-    <div><label>classical ranking: </label>{{player.classical.rating}}</div>
-    <div><label>bullet ranking: </label>{{player.bullet.rating}}</div>
+<page>
+  <div *ngIf="player">
+    <page-header>
+      <page-title>{{player.username}} detail</page-title>
+    </page-header>
+    <page-body>
+      <div>
+        <div><label>online: </label>{{player.online}}</div>
+        <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
+        <div><label>classical ranking: </label>{{player.classical.rating}}</div>
+        <div><label>bullet ranking: </label>{{player.bullet.rating}}</div>
+      </div>
+      <button (click)="goBack()">Back</button>
+    </page-body>
   </div>
-</div>
-<button (click)="goBack()">Back</button>
+</page>
+
+

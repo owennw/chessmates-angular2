@@ -11,12 +11,26 @@ import MatchesService from '../matches/matches.service'
 
 export default class Dashboard implements OnInit {
   matches: Match[] = []
+  filteredMatches: Match[] = []
+  options: number[]
+  defaultOption: number
 
   constructor(private matchService: MatchesService) {
+    this.options = [3, 6, 9]
+    this.defaultOption = 6
+  }
+
+  filter(number: number) {
+    this.filteredMatches = this.matches.slice(0, number)
   }
 
   ngOnInit(): void {
     this.matchService.getMatches()
-      .then(matches => this.matches = matches.slice(0, 9))
+      .then(matches => this.matches = matches)
+      .then(() => this.filter(this.defaultOption))
+  }
+
+  onFilterChange(value: number) {
+    this.filter(value)
   }
 }

@@ -16,7 +16,7 @@ export default class PlayerService {
     return this.http
       .get(this.playersUrl)
       .toPromise()
-      .then(response => response.json() as Player[])
+      .then(response => response.json().map((p: any) => new Player(p)))
       .catch(this.handleError)
   }
 

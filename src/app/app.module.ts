@@ -10,7 +10,8 @@ import { MockBackend } from '@angular/http/testing'
 
 import { App } from './app.component'
 
-import Heading from './components/heading/heading.component'
+import Page from './components/page/page.component'
+import PageHeader from './components/page/page-header.component'
 import Badge from './components/badge/badge.component'
 
 import Dashboard from './dashboard/dashboard.component'
@@ -22,8 +23,6 @@ import PlayersService from './players/players.service'
 import Matches from './matches/matches.component'
 import MatchDetail from './matches/detail/match-detail.component'
 import MatchesService from './matches/matches.service'
-
-import LichessService from './lichess/lichess.service'
 
 import SafePipe from './safepipe'
 
@@ -37,7 +36,8 @@ import SafePipe from './safepipe'
   declarations: [
     App,
     SafePipe,
-    Heading,
+    Page,
+    PageHeader,
     Badge,
     Dashboard,
     Players,
@@ -51,7 +51,6 @@ import SafePipe from './safepipe'
     BaseRequestOptions,
     PlayersService,
     MatchesService,
-    LichessService,
   ],
   bootstrap: [
     App,

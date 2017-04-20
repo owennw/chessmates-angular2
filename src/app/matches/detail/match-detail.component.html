@@ -1,2 +1,10 @@
-<heading [text]="match.name"></heading>
-<button (click)="goBack()">Back</button>
+<page>
+  <div *ngIf="match">
+    <page-header>
+      <page-title>{{match.name}}</page-title>
+    </page-header>
+    <page-body>
+      <button (click)="goBack()">Back</button>
+    </page-body>
+  </div>
+</page>

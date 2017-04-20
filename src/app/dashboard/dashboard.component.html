@@ -1,11 +1,29 @@
-<heading text="Recent matches"></heading>
-<div>
-  <a class="game-preview" *ngFor="let match of matches" [routerLink]="['/match', match.id]">
-    <badge>
-      <badge-title>{{match.name}}</badge-title>
-      <badge-content>
-        <iframe class="lichess" [src]="match.url | safe"></iframe>
-      </badge-content>
-    </badge>
-  </a>
-</div>
+<page>
+  <page-header>
+    <page-title>Recent matches</page-title>
+    <page-side-header>
+      <label>Number of matches </label>
+      <select (change)="onFilterChange($event.target.value)">
+        <option
+          *ngFor="let o of options"
+          [ngValue]="o"
+          [selected]="o === defaultOption"
+        >
+          {{o}}
+        </option>
+      </select>
+    </page-side-header>
+  </page-header>
+  <page-body>
+    <div>
+      <a class="game-preview" *ngFor="let match of filteredMatches" [routerLink]="['/match', match.id]">
+        <badge>
+          <badge-title>{{match.name}}</badge-title>
+          <badge-content>
+            <iframe class="lichess" [src]="match.url | safe"></iframe>
+          </badge-content>
+        </badge>
+      </a>
+    </div>
+  </page-body>
+</page>

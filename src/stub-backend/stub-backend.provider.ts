@@ -5,8 +5,6 @@ import environment from '../environments/environment'
 import players from './stub-players'
 import matches from './stub-matches'
 
-import lichessUser from './stub-lichess-user'
-
 const setupMockGet = (connection: MockConnection) => (url: String, stubs: Array<Object>) => {
   if (connection.request.method === RequestMethod.Get && connection.request.url.match(`/${url}$`)) {
     connection.mockRespond(new Response(new ResponseOptions({ body: stubs.slice() })))
@@ -35,10 +33,10 @@ const StubBackendProvider = {
       // Wrap in timeout to simulate server api call
       setTimeout(() => {
         mockGet('players', players)
-        mockGet('player/[A-Za-z]*', [lichessUser])
+        mockGet('player/[A-Za-z]*', players.filter(p => p.id === connection.request.url.split('/').pop()))
 
-        mockGet('matches', matches)
-        mockGet('match/[A-Za-z]*', matches.filter(m => m.id === connection.request.url.split('/').pop()))
+        mockGet('games', matches)
+        mockGet('game/[A-Za-z]*', matches.filter(m => m.id === connection.request.url.split('/').pop()))
       }, 500)
     })
 
