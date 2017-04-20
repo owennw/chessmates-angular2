@@ -1,9 +1,11 @@
 <heading text="Recent matches"></heading>
 <div>
   <a class="game-preview" *ngFor="let match of matches" [routerLink]="['/match', match.id]">
-    <div class="module">
-      <h4>{{match.name}}</h4>
-    </div>
-    <iframe class="lichess" [src]="match.url | safe"></iframe>
+    <badge>
+      <badge-title>{{match.name}}</badge-title>
+      <badge-content>
+        <iframe class="lichess" [src]="match.url | safe"></iframe>
+      </badge-content>
+    </badge>
   </a>
 </div>

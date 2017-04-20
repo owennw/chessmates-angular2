@@ -1,8 +1,10 @@
-<heading text="{{player.username}} details"></heading>
-<div>
-  <div><label>online: </label>{{player.online}}</div>
-  <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
-  <div><label>classical ranking: </label>{{player.classical.rating}}</div>
-  <div><label>bullet ranking: </label>{{player.bullet.rating}}</div>
+<div *ngIf="player">
+  <heading text="{{player.username}} details"></heading>
+  <div>
+    <div><label>online: </label>{{player.online}}</div>
+    <div><label>blitz ranking: </label>{{player.blitz.rating}}</div>
+    <div><label>classical ranking: </label>{{player.classical.rating}}</div>
+    <div><label>bullet ranking: </label>{{player.bullet.rating}}</div>
+  </div>
 </div>
 <button (click)="goBack()">Back</button>

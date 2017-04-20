@@ -3,6 +3,16 @@
 body
   margin-left: var(--gutter-left)
 
+h4
+  margin: 0
+  font-size: var(--heading-4-size)
+   
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+
 *
   font-family: var(--default-font-family)
 

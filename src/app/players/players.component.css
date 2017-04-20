@@ -1,65 +1,32 @@
 :root
-  --selected-background-color: #CFD8DC
-  --selected-color: white
   --player-list-background-color: #EEE
-  --player-list-selected-color: white
-  --player-list-selected-background-color: #BBD8DC
   --player-list-hover-color: #607D8B
   --player-list-hover-background-color: #DDD
-  --badge-background-color: #607D8B
 
-.selected
-  color: var(--selected-color)
-  background-color: var(--selected-background-color) !important
+a
+  display: inline-block
+  margin-bottom: 40px
+  margin-right: 50px
+  width: 250px
+  background-color: var(--player-list-background-color)
 
-.players
-  margin: 0 0 2em 0
-  list-style-type: none
-  padding: 0
-  width: 15em
+li
+  display: inline-block
+  width: 100%
 
-  & li
-    cursor: pointer
-    position: relative
-    left: 0
-    background-color: var(--player-list-background-color)
-    margin: .5em
-    padding: .3em 0
-    height: 1.6em
-    border-radius: 4px
+  &:hover
+    color: var(--player-list-hover-color)
+    background-color: var(--player-list-hover-background-color)
 
-    &.selected:hover
-      color: var(--player-list-selected-color)
-      background-color: var(--player-list-selected-background-color) !important
+.col-left, .col-right
+  display: block
+  width: 50%
 
-    &:hover
-      color: var(--player-list-hover-color)
-      background-color: var(--player-list-hover-background-color)
-      left: .1em
+.col-left
+  float: left
 
-  & text
-    position: relative
-    top: -3px
-
-  & badge
-    display: inline-block
-    font-size: small
-    color: white
-    padding: 0.8em 0.7em 0 0.7em
-    background-color: var(--badge-background-color)
-    line-height: 1em
-    position: relative
-    left: -1px
-    top: -4px
-    height: 1.8em
-    margin-right: .8em
-    border-radius: 4px 0 0 4px
-
-.player
+.col-right
   float: right
 
-  & label 
-    display: inline-block
-    margin: .5em 0
-    color: #607D8B
-    font-weight: bold
+  li
+    text-align: right

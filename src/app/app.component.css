@@ -19,36 +19,30 @@ header
 nav
   margin-top: calc(var(--header-height) + 10px)
 
-  & > ul
-    list-style: none
-    margin: 0
-    padding: 0
-    overflow: hidden
+  & > ul > li
+    float: left
 
-    & > li
-      float: left
+    &::before
+      content: '/'
+      color: #ddd
+      cursor: default
+      display: inline-block
 
-      &::before
-        content: '/'
-        color: #ddd
-        cursor: default
-        display: inline-block
+    & > a
+      padding: 5px 10px
+      text-decoration: none
+      margin-top: 10px
+      margin-right: 10px
+      display: inline-block
+      color: var(--accent-color)
+      text-transform: uppercase
 
-      & > a
-        padding: 5px 10px
-        text-decoration: none
-        margin-top: 10px
-        margin-right: 10px
-        display: inline-block
-        color: var(--accent-color)
-        text-transform: uppercase
+      &:visited, &:link
+        color: #607D8B
 
-        &:visited, &:link
-          color: #607D8B
+      &:hover
+        color: var(--accent-hover-color)
 
-        &:hover
-          color: var(--accent-hover-color)
-
-        &.active
-          color: #039be5
+      &.active
+        color: #039be5
  

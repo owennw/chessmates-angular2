@@ -6,32 +6,11 @@
 a
   text-decoration: none
 
-h3 
-  text-align: center
-  margin-bottom: 15px
-
-h4 
-  position: relative
-
 .game-preview
   display: inline-block
-  margin-right: 115px
+  margin-right: 85px
   margin-bottom: 30px
   width: var(--preview-width)
-
-  &:nth-child(3n)
-    margin-right: 0
-
-.module 
-  padding: 5px
-  text-align: center
-  color: var(--primary-light-color)
-  background-color: var(--primary-dark-color)
-  border-radius: 2px
-
-.module:hover 
-  color: var(--accent-hover-color)
-  cursor: pointer
 
 .lichess
   width: var(--preview-width)

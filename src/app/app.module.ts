@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 import { HttpModule, BaseRequestOptions } from '@angular/http'
@@ -10,7 +10,8 @@ import { MockBackend } from '@angular/http/testing'
 
 import { App } from './app.component'
 
-import Heading from './heading.component'
+import Heading from './components/heading/heading.component'
+import Badge from './components/badge/badge.component'
 
 import Dashboard from './dashboard/dashboard.component'
 
@@ -37,6 +38,7 @@ import SafePipe from './safepipe'
     App,
     SafePipe,
     Heading,
+    Badge,
     Dashboard,
     Players,
     PlayerDetail,
@@ -53,6 +55,9 @@ import SafePipe from './safepipe'
   ],
   bootstrap: [
     App,
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA,
   ],
 })
 

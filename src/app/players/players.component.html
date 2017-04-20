@@ -1,17 +1,32 @@
 <heading text="Scott Logic lichess players"></heading>
-<ul class="players">
-  <li
-    *ngFor="let player of players"
-    [class.selected]="player === selectedPlayer"
-    (click)="onSelect(player)"
-  >
-    <span class="badge">{{player.id}}</span>
-    <span>{{player.username}}</span>
-  </li>
-</ul>
-<div *ngIf="selectedPlayer">
-  <h2>
-    {{selectedPlayer.username | uppercase}} is selected
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
+<div>
+  <a *ngFor="let player of players" (click)="onSelect(player)">
+    <badge>
+      <badge-title>{{player.username}}</badge-title>
+      <badge-content>
+        <div class="col-left">
+          <ul>
+            <li>Online</li>
+            <li style="text-align: center">Rankings</li>
+            <li>Blitz</li>
+            <li>Bullet</li>
+            <li>Classical</li>
+            <li>Correspondence</li>
+            <li>Puzzle</li>
+          </ul>
+        </div>
+        <div class="col-right">
+          <ul>
+            <li>{{player.online}}</li>
+            <li></li>
+            <li>{{player.blitz.rating}}</li>
+            <li>{{player.bullet.rating}}</li>
+            <li>{{player.classical.rating}}</li>
+            <li>{{player.correspondence.rating}}</li>
+            <li>{{player.puzzle.rating}}</li>
+          </ul>
+        </div>
+      </badge-content>
+    </badge>
+  </a>
 </div>

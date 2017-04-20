@@ -1,0 +1,21 @@
+@import '../../styles/variables'
+
+:root
+  --title-height: 40px
+
+.badge
+  &:hover
+    cursor: pointer
+    
+    .title
+      color: var(--accent-hover-color)
+
+.title 
+  text-align: center
+  color: var(--primary-light-color)
+  background-color: var(--primary-dark-color)
+  border-radius: 2px
+  height: var(--title-height)
+
+  h4
+    padding-top: calc((var(--title-height) - var(--heading-4-size)) / 2)
