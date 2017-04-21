@@ -25,5 +25,16 @@
     padding-top: calc((var(--title-height) - var(--heading-4-size)) / 2)
 
 .body
-  overflow: auto
+  overflow: hidden
+  height: calc(100% - var(--title-height))
   background-color: var(--panel-body-background-color)
+
+.title, .body
+  border-radius: 2px
+
+:host /deep/ row
+  &:nth-child(even) .row
+    background-color: var(--accent-color-light)
+    
+  .row:hover
+    background-color: var(--accent-color-dark) !important

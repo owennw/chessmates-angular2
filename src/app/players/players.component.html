@@ -3,36 +3,39 @@
     <page-title>Scott Logic lichess players</page-title>
   </page-header>
   <page-body>
-    <div>
-      <a *ngFor="let player of players" (click)="onSelect(player)">
-        <panel>
-          <panel-title>{{player.username}}</panel-title>
-          <panel-content>
-            <div class="col-left">
-              <ul>
-                <li>Online</li>
-                <li style="text-align: center">Rankings</li>
-                <li>Blitz</li>
-                <li>Bullet</li>
-                <li>Classical</li>
-                <li>Correspondence</li>
-                <li>Puzzle</li>
-              </ul>
-            </div>
-            <div class="col-right">
-              <ul>
-                <li>{{player.online}}</li>
-                <li></li>
-                <li>{{player.blitz.rating}}</li>
-                <li>{{player.bullet.rating}}</li>
-                <li>{{player.classical.rating}}</li>
-                <li>{{player.correspondence.rating}}</li>
-                <li>{{player.puzzle.rating}}</li>
-              </ul>
-            </div>
-          </panel-content>
-        </panel>
-      </a>
-    </div>
+    <a *ngFor="let player of players" (click)="onSelect(player)">
+      <panel>
+        <panel-title>{{player.username}}</panel-title>
+        <panel-content>
+          <row>
+            <column>Online</column>
+            <column>{{player.online}}</column>
+          </row>
+          <row>
+            <column class="full-span">Rankings</column>
+          </row>
+          <row>
+            <column>Blitz</column>
+            <column>{{player.blitz.rating}}</column>
+          </row>
+          <row>
+            <column>Bullet</column>
+            <column>{{player.bullet.rating}}</column>
+          </row>
+          <row>
+            <column>Classical</column>
+            <column>{{player.classical.rating}}</column>
+          </row>
+          <row>
+            <column>Correspondence</column>
+            <column>{{player.correspondence.rating}}</column>
+          </row>
+          <row>
+            <column>Puzzle</column>
+            <column>{{player.puzzle.rating}}</column>
+          </row>
+        </panel-content>
+      </panel>
+    </a>
   </page-body>
 </page>

@@ -14,6 +14,7 @@ import Page from './components/page/page.component'
 import PageHeader from './components/page/page-header.component'
 import Panel from './components/Panel/panel.component'
 import Board from './components/board/board.component'
+import Row from './components/row/row.component'
 
 import Dashboard from './dashboard/dashboard.component'
 
@@ -28,6 +29,14 @@ import MatchesService from './matches/matches.service'
 
 import SafePipe from './safepipe'
 
+const commonComponents = [
+    Page,
+    PageHeader,
+    Panel,
+    Board,
+    Row,
+]
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,17 +47,13 @@ import SafePipe from './safepipe'
   declarations: [
     App,
     SafePipe,
-    Page,
-    PageHeader,
-    Panel,
-    Board,
     Dashboard,
     Players,
     PlayerDetail,
     Matches,
     MatchDetail,
     MatchPlayer,
-  ],
+  ].concat(commonComponents),
   providers: [
     StubBackendProvider,
     MockBackend,

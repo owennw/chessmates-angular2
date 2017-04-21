@@ -1,12 +1,27 @@
 <panel>
   <panel-title>{{player.userId}}</panel-title>
   <panel-content>
-    Speed: {{match.speed}}
-    Variant: {{match.variant}}
-    Rating: {{player.rating}}
-    Rated: {{match.rated}}
+    <row>
+      <column>Speed</column>
+      <column>{{match.speed | titlecase}}</column>
+    </row>
+    <row>
+      <column>Variant</column>
+      <column>{{match.variant | titlecase}}</column>
+    </row>
+    <row>
+      <column>Rating</column>
+      <column>{{player.rating}}</column>
+    </row>
+    <row>
+      <column>Rated</column>
+      <column>{{match.rated}}</column>
+    </row>
     <ng-template *ngIf="match.rated">
-      Rating change: {{player.ratingDiff}}
+      <row>
+        <column>Rating change</column>
+        <column>{{player.ratingDiff}}</column>
+      </row>
     </ng-template>
   </panel-content>
 </panel>

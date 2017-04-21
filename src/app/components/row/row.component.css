@@ -1,0 +1,16 @@
+.row
+  display: flex
+
+:host /deep/ column
+  padding: 0 20px
+
+  &:first-child:nth-last-child(2),
+  &:first-child:nth-last-child(2) ~ column
+    width: 50%
+
+  &:first-child:nth-last-child(2) ~ column
+    text-align: right
+
+  &.full-span
+    width: 100%
+    text-align: center
