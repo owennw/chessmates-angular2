@@ -8,7 +8,7 @@
         *ngFor="let match of matches"
         (click)="onSelect(match)"
       >
-        <span class="badge">{{match.name}}</span>
+        <span class="panel">{{match.name}}</span>
       </li>
     </ul>
     <div *ngIf="selectedMatch">

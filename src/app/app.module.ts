@@ -12,7 +12,7 @@ import { App } from './app.component'
 
 import Page from './components/page/page.component'
 import PageHeader from './components/page/page-header.component'
-import Badge from './components/badge/badge.component'
+import Panel from './components/Panel/panel.component'
 import Board from './components/board/board.component'
 
 import Dashboard from './dashboard/dashboard.component'
@@ -40,7 +40,7 @@ import SafePipe from './safepipe'
     SafePipe,
     Page,
     PageHeader,
-    Badge,
+    Panel,
     Board,
     Dashboard,
     Players,

@@ -2,9 +2,9 @@
 
 :root
   --title-height: 40px
-  --badge-body-background-color: #EEE
+  --panel-body-background-color: #EEE
 
-.badge
+.panel
   height: 100%
   overflow: auto
 
@@ -26,4 +26,4 @@
 
 .body
   overflow: auto
-  background-color: var(--badge-body-background-color)
+  background-color: var(--panel-body-background-color)

@@ -1,6 +1,6 @@
-<badge>
-  <badge-title>{{player.userId}}</badge-title>
-  <badge-content>
+<panel>
+  <panel-title>{{player.userId}}</panel-title>
+  <panel-content>
     Speed: {{match.speed}}
     Variant: {{match.variant}}
     Rating: {{player.rating}}
@@ -8,5 +8,5 @@
     <ng-template *ngIf="match.rated">
       Rating change: {{player.ratingDiff}}
     </ng-template>
-  </badge-content>
-</badge>
+  </panel-content>
+</panel>

@@ -17,12 +17,12 @@
   <page-body>
     <div>
       <a class="game-preview" *ngFor="let match of filteredMatches" [routerLink]="['/match', match.id]">
-        <badge>
-          <badge-title>{{match.name}}</badge-title>
-          <badge-content>
+        <panel>
+          <panel-title>{{match.name}}</panel-title>
+          <panel-content>
             <board [url]="match.url"></board>
-          </badge-content>
-        </badge>
+          </panel-content>
+        </panel>
       </a>
     </div>
   </page-body>

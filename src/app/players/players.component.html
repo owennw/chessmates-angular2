@@ -5,9 +5,9 @@
   <page-body>
     <div>
       <a *ngFor="let player of players" (click)="onSelect(player)">
-        <badge>
-          <badge-title>{{player.username}}</badge-title>
-          <badge-content>
+        <panel>
+          <panel-title>{{player.username}}</panel-title>
+          <panel-content>
             <div class="col-left">
               <ul>
                 <li>Online</li>
@@ -30,8 +30,8 @@
                 <li>{{player.puzzle.rating}}</li>
               </ul>
             </div>
-          </badge-content>
-        </badge>
+          </panel-content>
+        </panel>
       </a>
     </div>
   </page-body>
