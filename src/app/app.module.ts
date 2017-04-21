@@ -13,6 +13,7 @@ import { App } from './app.component'
 import Page from './components/page/page.component'
 import PageHeader from './components/page/page-header.component'
 import Badge from './components/badge/badge.component'
+import Board from './components/board/board.component'
 
 import Dashboard from './dashboard/dashboard.component'
 
@@ -22,6 +23,7 @@ import PlayersService from './players/players.service'
 
 import Matches from './matches/matches.component'
 import MatchDetail from './matches/detail/match-detail.component'
+import MatchPlayer from './matches/detail/match-player.component'
 import MatchesService from './matches/matches.service'
 
 import SafePipe from './safepipe'
@@ -39,11 +41,13 @@ import SafePipe from './safepipe'
     Page,
     PageHeader,
     Badge,
+    Board,
     Dashboard,
     Players,
     PlayerDetail,
     Matches,
     MatchDetail,
+    MatchPlayer,
   ],
   providers: [
     StubBackendProvider,

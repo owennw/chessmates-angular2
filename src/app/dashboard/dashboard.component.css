@@ -14,8 +14,4 @@ a
   margin-right: 85px
   margin-bottom: 30px
   width: var(--preview-width)
-
-.lichess
-  width: var(--preview-width)
   height: 352px
-  border: none

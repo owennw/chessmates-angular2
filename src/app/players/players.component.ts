@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 
 import PlayersService from './players.service'
-import Player from './player'
+import { IPlayer } from './player'
 
 @Component({
   selector: 'players',
@@ -11,7 +11,7 @@ import Player from './player'
 })
 
 export default class Players implements OnInit {
-  players: Player[] = []
+  players: IPlayer[] = []
 
   constructor(
     private playersService: PlayersService,
@@ -28,7 +28,7 @@ export default class Players implements OnInit {
       .then(players => this.players = players)
   }
 
-  onSelect(player: Player): void {
+  onSelect(player: IPlayer): void {
     this.router.navigate(['/player', player.id])
   }
 }

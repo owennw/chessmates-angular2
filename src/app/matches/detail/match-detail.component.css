@@ -1,0 +1,20 @@
+:root
+  --horizontal-margin: 15px
+
+.board
+  width: 1000px
+  height: 644px
+  margin-left: 5%
+  margin-right: var(--horizontal-margin)
+  display: inline-block
+
+.stats
+  display: inline-block
+  vertical-align: top
+
+  .winner, .loser
+    width: 250px
+    display: inline-block
+  
+  .winner
+    margin-right: var(--horizontal-margin)

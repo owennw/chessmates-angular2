@@ -20,7 +20,7 @@
         <badge>
           <badge-title>{{match.name}}</badge-title>
           <badge-content>
-            <iframe class="lichess" [src]="match.url | safe"></iframe>
+            <board [url]="match.url"></board>
           </badge-content>
         </badge>
       </a>

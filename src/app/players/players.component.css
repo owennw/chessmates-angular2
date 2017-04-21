@@ -1,5 +1,4 @@
 :root
-  --player-list-background-color: #EEE
   --player-list-hover-color: #607D8B
   --player-list-hover-background-color: #DDD
 
@@ -8,7 +7,6 @@ a
   margin-bottom: 40px
   margin-right: 50px
   width: 250px
-  background-color: var(--player-list-background-color)
 
 li
   display: inline-block

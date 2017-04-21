@@ -34,19 +34,14 @@ nav
       margin-top: 10px
       margin-right: 10px
       display: inline-block
-      color: var(--accent-color)
+      color: var(--accent-color-dark)
       text-transform: uppercase
 
-      &:visited, &:link
-        color: #607D8B
-
       &:hover
-        color: var(--accent-hover-color)
-
-      &.active
-        color: #039be5
+        color: var(--accent-color-light)
 
 footer
   font-style: italic
-  float: right
- 
+  position: fixed
+  bottom: 0
+  right: 0

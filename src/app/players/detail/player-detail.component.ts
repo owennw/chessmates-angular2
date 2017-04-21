@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router'
 import { Location } from '@angular/common'
 
 import PlayersService from '../players.service'
-import Player from '../player'
+import { IPlayer } from '../player'
 
 @Component({
   selector: 'player',
@@ -12,7 +12,7 @@ import Player from '../player'
 })
 
 export default class PlayerDetailComponent implements OnInit {
-  player: Player
+  player: IPlayer
 
   constructor(
     private playersService: PlayersService,

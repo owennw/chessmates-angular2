@@ -15,7 +15,7 @@ interface IClock {
   totalTime: number
 }
 
-export default class Match {
+export interface IMatch {
   id: string
   rated: boolean
   variant: string
@@ -26,6 +26,23 @@ export default class Match {
   clock: IClock
   players: IPlayers
   winner: IPlayer
+  loser: IPlayer
+  name: string
+  url: string
+}
+
+export default class Match implements IMatch {
+  id: string
+  rated: boolean
+  variant: string
+  speed: string
+  createdAt: Date
+  lastMoveAt: Date
+  turns: number
+  clock: IClock
+  players: IPlayers
+  winner: IPlayer
+  loser: IPlayer
   name: string
   url: string
 
@@ -40,6 +57,7 @@ export default class Match {
     this.clock = props.cloc as IClock
     this.players = props.players as IPlayers
     this.winner = this.players[props.winner]
+    this.loser = this.players[props.winner === 'white' ? 'black' : 'white']
 
     this.name = `${this.players.white.userId} vs. ${this.players.black.userId}`
     this.url = `https://lichess.org/embed/${this.id}?theme=auto&bg=auto`

@@ -2,13 +2,17 @@
 
 :root
   --title-height: 40px
+  --badge-body-background-color: #EEE
 
 .badge
+  height: 100%
+  overflow: auto
+
   &:hover
     cursor: pointer
     
     .title
-      color: var(--accent-hover-color)
+      color: var(--accent-color-dark)
 
 .title 
   text-align: center
@@ -19,3 +23,7 @@
 
   h4
     padding-top: calc((var(--title-height) - var(--heading-4-size)) / 2)
+
+.body
+  overflow: auto
+  background-color: var(--badge-body-background-color)

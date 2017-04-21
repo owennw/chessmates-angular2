@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 
-import Match from './match'
+import { IMatch } from './match'
 import MatchesService from './matches.service'
 
 @Component({
@@ -11,8 +11,8 @@ import MatchesService from './matches.service'
 })
 
 export default class Matches implements OnInit {
-  matches: Match[]
-  selectedMatch: Match
+  matches: IMatch[]
+  selectedMatch: IMatch
 
   constructor(
     private matchesService: MatchesService,
@@ -29,7 +29,7 @@ export default class Matches implements OnInit {
       .then(matches => this.matches = matches)
   }
 
-  onSelect(match: Match): void {
+  onSelect(match: IMatch): void {
     this.selectedMatch = match
   }
 

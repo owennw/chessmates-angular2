@@ -1,0 +1,12 @@
+<badge>
+  <badge-title>{{player.userId}}</badge-title>
+  <badge-content>
+    Speed: {{match.speed}}
+    Variant: {{match.variant}}
+    Rating: {{player.rating}}
+    Rated: {{match.rated}}
+    <ng-template *ngIf="match.rated">
+      Rating change: {{player.ratingDiff}}
+    </ng-template>
+  </badge-content>
+</badge>

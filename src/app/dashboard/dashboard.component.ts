@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import Match from '../matches/match'
+import { IMatch } from '../matches/match'
 import MatchesService from '../matches/matches.service'
 
 @Component({
@@ -10,8 +10,8 @@ import MatchesService from '../matches/matches.service'
 })
 
 export default class Dashboard implements OnInit {
-  matches: Match[] = []
-  filteredMatches: Match[] = []
+  matches: IMatch[] = []
+  filteredMatches: IMatch[] = []
   options: number[]
   defaultOption: number
 

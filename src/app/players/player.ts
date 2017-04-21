@@ -13,7 +13,7 @@ interface IChessTypes {
   crazyhouse: ILichessTypeStats
 }
 
-interface IPlayer {
+export interface IPlayer {
   id: string
   username: string
   online: boolean

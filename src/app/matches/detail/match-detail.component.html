@@ -4,6 +4,17 @@
       <page-title>{{match.name}}</page-title>
     </page-header>
     <page-body>
+      <div class="board">
+        <board [url]="match.url"></board>
+      </div>
+      <div class="stats">
+        <div class="winner">
+          <match-player [match]="match" [player]="match.winner"></match-player>
+        </div>
+        <div class="loser">
+          <match-player [match]="match" [player]="match.loser"></match-player>
+        </div>
+      </div>
       <button (click)="goBack()">Back</button>
     </page-body>
   </div>

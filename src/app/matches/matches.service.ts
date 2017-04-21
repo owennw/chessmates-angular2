@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
 
-import Match from './match'
+import Match, { IMatch } from './match'
 
 import { baseUrl } from '../config'
 
@@ -12,7 +12,7 @@ export default class MatchesService {
   constructor(private http: Http) {
   }
 
-  getMatches(): Promise<Match[]> {
+  getMatches(): Promise<IMatch[]> {
     return this.http
       .get(this.matchesUrl)
       .toPromise()
@@ -22,7 +22,7 @@ export default class MatchesService {
 
   getMatch(id: string): Promise<Match> {
     return this.getMatches()
-      .then(matches => matches.find((m: Match) => m.id === id))
+      .then(matches => matches.find((m: IMatch) => m.id === id))
   }
 
   private handleError(error: any): Promise<any> {

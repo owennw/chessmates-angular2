@@ -4,7 +4,7 @@ import { Location } from '@angular/common'
 
 import MatchesService from '../matches.service'
 
-import Match from '../match'
+import { IMatch } from '../match'
 
 @Component({
   selector: 'match',
@@ -13,7 +13,7 @@ import Match from '../match'
 })
 
 export default class MatchComponent implements OnInit {
-  match: Match
+  match: IMatch
 
   constructor(
     private matchesService: MatchesService,
