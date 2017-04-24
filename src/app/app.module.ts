@@ -10,11 +10,7 @@ import { MockBackend } from '@angular/http/testing'
 
 import { App } from './app.component'
 
-import Page from '../components/page/page.component'
-import PageHeader from '../components/page/page-header.component'
-import Panel from '../components/Panel/panel.component'
-import Board from '../components/board/board.component'
-import Row from '../components/row/row.component'
+
 
 import Dashboard from '../dashboard/dashboard.component'
 
@@ -27,15 +23,8 @@ import MatchDetail from '../matches/detail/match-detail.component'
 import MatchPlayer from '../matches/detail/match-player.component'
 import MatchesService from '../matches/matches.service'
 
-import SafePipe from '../safepipe'
 
-const commonComponents = [
-    Page,
-    PageHeader,
-    Panel,
-    Board,
-    Row,
-]
+import ComponentsModule from '../components/components.module'
 
 @NgModule({
   imports: [
@@ -43,17 +32,17 @@ const commonComponents = [
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    ComponentsModule,
   ],
   declarations: [
     App,
-    SafePipe,
     Dashboard,
     Players,
     PlayerDetail,
     Matches,
     MatchDetail,
     MatchPlayer,
-  ].concat(commonComponents),
+  ],
   providers: [
     StubBackendProvider,
     MockBackend,
