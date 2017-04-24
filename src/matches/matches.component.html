@@ -1,21 +1,29 @@
 <page>
   <page-header>
-    <page-title>Scott Logic lichess matches</page-title>
+    <page-title>Recent matches</page-title>
+    <page-side-header>
+      <label>Number of matches </label>
+      <select (change)="onFilterChange($event.target.value)">
+        <option
+          *ngFor="let o of options"
+          [ngValue]="o"
+          [selected]="o === defaultOption"
+        >
+          {{o}}
+        </option>
+      </select>
+    </page-side-header>
   </page-header>
   <page-body>
-    <ul class="matches">
-      <li
-        *ngFor="let match of matches"
-        (click)="onSelect(match)"
-      >
-        <span class="panel">{{match.name}}</span>
-      </li>
-    </ul>
-    <div *ngIf="selectedMatch">
-      <h2>
-        {{selectedMatch.name}} is selected
-      </h2>
-      <button (click)="gotoDetail()">View Details</button>
+    <div>
+      <a class="game-preview" *ngFor="let match of filteredMatches" [routerLink]="['/match', match.id]">
+        <panel>
+          <panel-title>{{match.name}}</panel-title>
+          <panel-content>
+            <board [url]="match.url"></board>
+          </panel-content>
+        </panel>
+      </a>
     </div>
   </page-body>
 </page>

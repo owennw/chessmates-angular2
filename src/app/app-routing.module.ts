@@ -3,19 +3,14 @@ import { RouterModule, Routes } from '@angular/router'
 
 import Dashboard from '../dashboard/dashboard.component'
 
-import Players from '../players/players.component'
-import PlayerDetail  from '../players/detail/player-detail.component'
-
-import Matches from '../matches/matches.component'
-import MatchDetail from '../matches/detail/match-detail.component'
+import matchRoutes from '../matches/routes'
+import playersRoutes from '../players/routes'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: Dashboard },
-  { path: 'player/:id', component: PlayerDetail },
-  { path: 'players', component: Players },
-  { path: 'matches', component: Matches },
-  { path: 'match/:id', component: MatchDetail },
+  ...matchRoutes,
+  ...playersRoutes,
 ]
 
 @NgModule({
