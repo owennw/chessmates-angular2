@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'dashboard', component: Dashboard },
   { path: 'matches', loadChildren: '../matches/matches.module' },
   { path: 'players', loadChildren: '../players/players.module' },
+  { path: 'leaderboard', loadChildren: '../leaderboard/leaderboard.module' },
 ]
 
 @NgModule({

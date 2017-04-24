@@ -16,6 +16,7 @@ import Dashboard from '../dashboard/dashboard.component'
 
 import PlayersModule from '../players/players.module'
 import MatchesModule from '../matches/matches.module'
+import LeaderboardModule from '../leaderboard/leaderboard.module'
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import MatchesModule from '../matches/matches.module'
     ComponentsModule,
     MatchesModule.forRoot(),
     PlayersModule.forRoot(),
+    LeaderboardModule.forRoot(),
   ],
   declarations: [
     App,

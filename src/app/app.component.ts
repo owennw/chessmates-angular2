@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core'
         <li><a routerLink="/dashboard">Home</a></li>
         <li><a routerLink="/matches">Matches</a></li>
         <li><a routerLink="/players">Players</a></li>
+        <li><a routerLink="/leaderboard">Leaderboard</a></li>
       </ul>
     </nav>
     <router-outlet></router-outlet>
