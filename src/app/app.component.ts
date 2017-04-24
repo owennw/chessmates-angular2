@@ -14,7 +14,7 @@ import { Component, ViewEncapsulation } from '@angular/core'
     <router-outlet></router-outlet>
     <footer>Version: 1.0.0; Last Updated: 20/04/2014</footer>
   `,
-  styleUrls: [ './styles/styles.css', './app.component.css' ],
+  styleUrls: [ '../styles/styles.css', './app.component.css' ],
   encapsulation: ViewEncapsulation.None,
 })
 
