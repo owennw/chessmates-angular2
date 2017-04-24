@@ -8,7 +8,6 @@ import Board from './board/board.component'
 import SafePipe from './board/safepipe'
 import Row from './row/row.component'
 
-
 @NgModule({
   imports: [CommonModule],
   declarations: [

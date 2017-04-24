@@ -10,21 +10,12 @@ import { MockBackend } from '@angular/http/testing'
 
 import { App } from './app.component'
 
-
+import ComponentsModule from '../components/components.module'
 
 import Dashboard from '../dashboard/dashboard.component'
 
-import Players from '../players/players.component'
-import PlayerDetail from '../players/detail/player-detail.component'
-import PlayersService from '../players/players.service'
-
-import Matches from '../matches/matches.component'
-import MatchDetail from '../matches/detail/match-detail.component'
-import MatchPlayer from '../matches/detail/match-player.component'
-import MatchesService from '../matches/matches.service'
-
-
-import ComponentsModule from '../components/components.module'
+import PlayersModule from '../players/players.module'
+import MatchesModule from '../matches/matches.module'
 
 @NgModule({
   imports: [
@@ -33,22 +24,17 @@ import ComponentsModule from '../components/components.module'
     HttpModule,
     AppRoutingModule,
     ComponentsModule,
+    MatchesModule,
+    PlayersModule,
   ],
   declarations: [
     App,
     Dashboard,
-    Players,
-    PlayerDetail,
-    Matches,
-    MatchDetail,
-    MatchPlayer,
   ],
   providers: [
     StubBackendProvider,
     MockBackend,
     BaseRequestOptions,
-    PlayersService,
-    MatchesService,
   ],
   bootstrap: [
     App,
