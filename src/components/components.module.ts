@@ -19,6 +19,7 @@ import Row from './row/row.component'
     Row,
   ],
   exports: [
+    CommonModule,
     Page,
     PageHeader,
     Panel,

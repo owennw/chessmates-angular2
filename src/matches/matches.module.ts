@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders, NO_ERRORS_SCHEMA } from '@angular/core'
-import { CommonModule } from '@angular/common'
 
 import ComponentsModule from '../components/components.module'
 
@@ -12,7 +11,6 @@ import MatchesRouting from './matches.routing'
 
 @NgModule({
   imports: [
-    CommonModule,
     ComponentsModule,
     MatchesRouting,
   ],
