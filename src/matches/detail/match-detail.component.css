@@ -1,5 +1,8 @@
 :root
   --horizontal-margin: 15px
+  --side-width: 615px
+  --player-stats-width: calc(var(--side-width) - var(--horizontal-margin))
+  --match-width: 500px
 
 .board
   width: 1000px
@@ -8,12 +11,17 @@
   margin-right: var(--horizontal-margin)
   display: inline-block
 
+.match
+  width: 500px
+  margin-bottom: 15px
+  margin-left: calc((var(--side-width) - var(--match-width)) / 2)
+
 .stats
   display: inline-block
   vertical-align: top
 
   .winner, .loser
-    width: 250px
+    width: calc(var(--player-stats-width) / 2)
     display: inline-block
   
   .winner

@@ -6,7 +6,6 @@ import PlayersService from '../players.service'
 import { IPlayer } from '../player'
 
 @Component({
-  selector: 'player',
   templateUrl: './player-detail.component.html',
   styleUrls: [ './player-detail.component.css' ],
 })

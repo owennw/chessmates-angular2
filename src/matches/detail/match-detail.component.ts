@@ -7,7 +7,6 @@ import MatchesService from '../matches.service'
 import { IMatch } from '../match'
 
 @Component({
-  selector: 'match',
   templateUrl: './match-detail.component.html',
   styleUrls: [ './match-detail.component.css' ],
 })

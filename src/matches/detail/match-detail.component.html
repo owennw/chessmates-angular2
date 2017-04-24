@@ -8,6 +8,35 @@
         <board [url]="match.url"></board>
       </div>
       <div class="stats">
+        <div class="match">
+          <panel>
+            <panel-title>Match stats</panel-title>
+            <panel-content>
+              <row>
+                <column>Speed</column>
+                <column>{{match.speed | titlecase}}</column>
+              </row>
+              <row>
+                <column>Variant</column>
+                <column>{{match.variant | titlecase}}</column>
+              </row>
+              <row>
+                <column>Rated</column>
+                <column>{{match.rated}}</column>
+              </row>
+              <ng-container *ngIf="match.clock">
+                <row>
+                  <column>Time (seconds)</column>
+                  <column>{{match.clock.initial}}</column>
+                </row>
+                <row>
+                  <column>Increment</column>
+                  <column>{{match.clock.increment}}</column>
+                </row>
+              </ng-container>
+            </panel-content>
+          </panel>
+        </div>
         <div class="winner">
           <match-player [match]="match" [player]="match.winner"></match-player>
         </div>

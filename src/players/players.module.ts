@@ -7,10 +7,13 @@ import Players from '../players/players.component'
 import PlayerDetail from '../players/detail/player-detail.component'
 import PlayersService from '../players/players.service'
 
+import PlayersRouting from './players.routing'
+
 @NgModule({
   imports: [
     CommonModule,
     ComponentsModule,
+    PlayersRouting,
   ],
   declarations: [
     Players,
@@ -18,10 +21,6 @@ import PlayersService from '../players/players.service'
   ],
   schemas: [
     NO_ERRORS_SCHEMA,
-  ],
-  exports: [
-    Players,
-    PlayerDetail,
   ],
 })
 

@@ -8,10 +8,13 @@ import MatchDetail from './detail/match-detail.component'
 import MatchPlayer from './detail/match-player.component'
 import MatchesService from './matches.service'
 
+import MatchesRouting from './matches.routing'
+
 @NgModule({
   imports: [
     CommonModule,
     ComponentsModule,
+    MatchesRouting,
   ],
   declarations: [
     Matches,
@@ -20,11 +23,6 @@ import MatchesService from './matches.service'
   ],
   schemas: [
     NO_ERRORS_SCHEMA,
-  ],
-  exports: [
-    Matches,
-    MatchDetail,
-    MatchPlayer,
   ],
 })
 

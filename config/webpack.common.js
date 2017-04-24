@@ -24,6 +24,7 @@ module.exports = {
             options: { configFileName: 'tsconfig.json' }
           },
           'angular2-template-loader',
+          'angular-router-loader?loader=system',
         ],
       },
       {

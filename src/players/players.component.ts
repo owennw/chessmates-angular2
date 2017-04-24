@@ -5,7 +5,6 @@ import PlayersService from './players.service'
 import { IPlayer } from './player'
 
 @Component({
-  selector: 'players',
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.css'],
 })
@@ -29,6 +28,6 @@ export default class Players implements OnInit {
   }
 
   onSelect(player: IPlayer): void {
-    this.router.navigate(['/player', player.id])
+    this.router.navigate(['/players', player.id])
   }
 }

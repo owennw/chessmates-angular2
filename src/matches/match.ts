@@ -54,7 +54,7 @@ export default class Match implements IMatch {
     this.createdAt = new Date(props.createdAt)
     this.lastMoveAt = new Date(props.lastMoveAt)
     this.turns = props.turns
-    this.clock = props.cloc as IClock
+    this.clock = props.clock as IClock
     this.players = props.players as IPlayers
     this.winner = this.players[props.winner]
     this.loser = this.players[props.winner === 'white' ? 'black' : 'white']

@@ -16,7 +16,11 @@
   </page-header>
   <page-body>
     <div>
-      <a class="game-preview" *ngFor="let match of filteredMatches" [routerLink]="['/match', match.id]">
+      <a
+        class="game-preview"
+        *ngFor="let match of filteredMatches"
+        (click)="onSelect(match)"
+      >
         <panel>
           <panel-title>{{match.name}}</panel-title>
           <panel-content>

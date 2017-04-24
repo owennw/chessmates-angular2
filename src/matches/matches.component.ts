@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 import { IMatch } from './match'
 import MatchesService from './matches.service'
 
 @Component({
-  selector: 'matches',
   templateUrl: './matches.component.html',
   styleUrls: ['./matches.component.css'],
 })
@@ -15,7 +15,10 @@ export default class Matches implements OnInit {
   options: number[]
   defaultOption: number
 
-  constructor(private matchService: MatchesService) {
+  constructor(
+    private matchService: MatchesService,
+    private router: Router
+  ) {
     this.options = [3, 6, 9]
     this.defaultOption = 6
   }
@@ -32,5 +35,9 @@ export default class Matches implements OnInit {
 
   onFilterChange(value: number) {
     this.filter(value)
+  }
+
+  onSelect(match: IMatch): void {
+    this.router.navigate(['/matches', match.id])
   }
 }
