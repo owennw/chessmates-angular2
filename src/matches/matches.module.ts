@@ -1,4 +1,4 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
+import { NgModule, ModuleWithProviders, NO_ERRORS_SCHEMA } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import ComponentsModule from '../components/components.module'
@@ -18,7 +18,6 @@ import MatchesService from './matches.service'
     MatchDetail,
     MatchPlayer,
   ],
-  providers: [MatchesService],
   schemas: [
     NO_ERRORS_SCHEMA,
   ],
@@ -29,4 +28,11 @@ import MatchesService from './matches.service'
   ],
 })
 
-export default class MatchesModule {}
+export default class MatchesModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: MatchesModule,
+      providers: [MatchesService],
+    }
+  }
+}

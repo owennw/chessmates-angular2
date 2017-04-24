@@ -24,8 +24,8 @@ import MatchesModule from '../matches/matches.module'
     HttpModule,
     AppRoutingModule,
     ComponentsModule,
-    MatchesModule,
-    PlayersModule,
+    MatchesModule.forRoot(),
+    PlayersModule.forRoot(),
   ],
   declarations: [
     App,

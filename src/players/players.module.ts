@@ -1,4 +1,4 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
+import { NgModule, ModuleWithProviders, NO_ERRORS_SCHEMA } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import ComponentsModule from '../components/components.module'
@@ -16,7 +16,6 @@ import PlayersService from '../players/players.service'
     Players,
     PlayerDetail,
   ],
-  providers: [PlayersService],
   schemas: [
     NO_ERRORS_SCHEMA,
   ],
@@ -26,4 +25,11 @@ import PlayersService from '../players/players.service'
   ],
 })
 
-export default class PlayersModule {}
+export default class PlayersModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: PlayersModule,
+      providers: [PlayersService],
+    }
+  }
+}
