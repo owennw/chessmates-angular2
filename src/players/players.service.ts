@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
 
-import Player from './player'
+import Player, { IPlayer } from './player'
 
 import { baseUrl } from '../config'
 
@@ -12,7 +12,7 @@ export default class PlayerService {
   constructor(private http: Http) {
   }
 
-  getPlayers(): Promise<Player[]> {
+  getPlayers(): Promise<IPlayer[]> {
     return this.http
       .get(this.playersUrl)
       .toPromise()

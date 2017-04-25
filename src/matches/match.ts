@@ -1,12 +1,12 @@
-interface IPlayer {
+interface IMatchPlayer {
   userId: string
   rating: number
   ratingDiff: number
 }
 
 interface IPlayers {
-  white: IPlayer
-  black: IPlayer
+  white: IMatchPlayer
+  black: IMatchPlayer
 }
 
 interface IClock {
@@ -25,8 +25,9 @@ export interface IMatch {
   turns: number
   clock: IClock
   players: IPlayers
-  winner: IPlayer
-  loser: IPlayer
+  winner: IMatchPlayer
+  status: string
+  loser: IMatchPlayer
   name: string
   url: string
 }
@@ -41,8 +42,9 @@ export default class Match implements IMatch {
   turns: number
   clock: IClock
   players: IPlayers
-  winner: IPlayer
-  loser: IPlayer
+  winner: IMatchPlayer
+  status: string
+  loser: IMatchPlayer
   name: string
   url: string
 
@@ -57,6 +59,7 @@ export default class Match implements IMatch {
     this.clock = props.clock as IClock
     this.players = props.players as IPlayers
     this.winner = this.players[props.winner]
+    this.status = props.status
     this.loser = this.players[props.winner === 'white' ? 'black' : 'white']
 
     this.name = `${this.players.white.userId} vs. ${this.players.black.userId}`

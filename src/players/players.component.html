@@ -14,23 +14,23 @@
           <row>
             <column class="full-span">Rankings</column>
           </row>
-          <row>
+          <row *ngIf="player.blitz">
             <column>Blitz</column>
             <column>{{player.blitz.rating}}</column>
           </row>
-          <row>
+          <row *ngIf="player.bullet">
             <column>Bullet</column>
             <column>{{player.bullet.rating}}</column>
           </row>
-          <row>
+          <row *ngIf="player.classical">
             <column>Classical</column>
             <column>{{player.classical.rating}}</column>
           </row>
-          <row>
+          <row *ngIf="player.correspondence">
             <column>Correspondence</column>
             <column>{{player.correspondence.rating}}</column>
           </row>
-          <row>
+          <row *ngIf="player.puzzle">
             <column>Puzzle</column>
             <column>{{player.puzzle.rating}}</column>
           </row>

@@ -27,7 +27,7 @@ export interface IPlayer {
   seenAt: Date
 }
 
-interface IPlayerRaw {
+export interface IPlayerRaw {
   id: string
   username: string
   online: boolean
