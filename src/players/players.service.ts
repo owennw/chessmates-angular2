@@ -13,12 +13,12 @@ export default class PlayerService {
   }
 
   getPlayers(): Promise<IPlayer[]> {
-    return this.http
-      .get(this.playersUrl)
-      .toPromise()
-      .then(response => response.json().map((p: any) => new Player(p)))
-      .catch(this.handleError)
-  }
+      return this.http
+        .get(this.playersUrl, { withCredentials: true })
+        .toPromise()
+        .then(response => response.json().map((p: any) => new Player(p)))
+        .catch(this.handleError)
+    }
 
   getPlayer(id: string): Promise<Player> {
     return this.getPlayers()
